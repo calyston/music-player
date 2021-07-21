@@ -1,13 +1,13 @@
 //Buttons
-
 svg {
-  height: 3rem;
+  cursor: pointer;
 }
 
 .buttons {
-  height: 3rem;
 
-  :hover {
-    color: $blue;
+  transition: $main-transition;
+
+  :hover, :active {
+    fill: $blue;
   }
 }
