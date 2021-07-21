@@ -1,1 +1,36 @@
 //Typography
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap');
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  line-height: 1.5;
+  text-transform: uppercase;
+  cursor: default;
+}
+
+h1, h2, h3 {
+  font-family: $body-font;
+  margin: $main-spacing * 2;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 3.2rem;
+}
+
+h3 {
+  font-size: 2.4rem;
+}
+
+h4, p, li, span, button, label{
+  font-size: 1.6rem;
+  font-family: $body-font;
+  margin: $main-spacing;
+}

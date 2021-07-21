@@ -1,13 +1,12 @@
 //Music Player Controls
 
 import React from 'react';
-import play from '../assets/icons/play.svg';
-// import pause from '../assets/icons/pause.svg';
-import previous from '../assets/icons/previous.svg';
-import next from '../assets/icons/next.svg';
-// import library from '../assets/icons/library.svg';
-// import repeat from '../assets/icons/repeat.svg';
-// import shuffle from '../assets/icons/shuffle.svg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+//Font Awesome SVGs
+import { faPlay } from '@fortawesome/free-solid-svg-icons';
+import { faStepBackward } from '@fortawesome/free-solid-svg-icons';
+import { faStepForward } from '@fortawesome/free-solid-svg-icons';
 
 const Player = () => {
   return (
@@ -18,9 +17,9 @@ const Player = () => {
         <p>End Time</p>
       </div>
       <div className="play-control">
-        <img className="buttons previous" src={previous} alt="previous" />
-        <img className="buttons play" src={play} alt="play" />
-        <img className="buttons next" src={next} alt="next" />
+        <FontAwesomeIcon className="previous" size="3x" icon={faStepBackward} />
+        <FontAwesomeIcon className="play" size="3x" icon={faPlay} />
+        <FontAwesomeIcon className="next" size="3x" icon={faStepForward} />
       </div>
     </div>
   )

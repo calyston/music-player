@@ -1,4 +1,5 @@
 import React from 'react';
+import './sass/main.scss';
 
 //Adding Components
 import Song from './components/Song';

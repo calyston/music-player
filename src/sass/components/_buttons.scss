@@ -1,1 +1,13 @@
 //Buttons
+
+svg {
+  height: 3rem;
+}
+
+.buttons {
+  height: 3rem;
+
+  :hover {
+    color: $blue;
+  }
+}
