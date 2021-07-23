@@ -44,7 +44,7 @@ const Player = ({ currentSong, isPlaying, setIsPlaying }) => {
     <div className="player-container">
       <div className="time-control">
         <p>{getTime(songInfo.currentTime)}</p>
-        <input type="range" />
+        <input min={0} max={songInfo.duration} value={songInfo.currentTime} type="range" />
         <p>{getTime(songInfo.duration)}</p>
       </div>
       <div className="play-controls">
