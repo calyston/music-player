@@ -9,12 +9,18 @@ import React, { useRef } from 'react';
 // import { faStepForward } from '@fortawesome/free-solid-svg-icons';
 // import { faRandom } from '@fortawesome/free-solid-svg-icons';
 
-const Player = ({ currentSong }) => {
+const Player = ({ currentSong, isPlaying, setIsPlaying }) => {
   //Reference
   const audioRef = useRef(null);
   //Event Handlers
   const playSongToggle = () => {
-    audioRef.current.play();
+    if (isPlaying) {
+      audioRef.current.pause();
+      setIsPlaying(!isPlaying);
+    } else {
+      audioRef.current.play();
+      setIsPlaying(!isPlaying);
+    }
   };
 
   return (
