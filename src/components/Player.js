@@ -1,17 +1,29 @@
 //Music Player Controls
 
-import React from 'react';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useEffect } from 'react';
 
-//Font Awesome SVGs
-// import { faPlay } from '@fortawesome/free-solid-svg-icons';
-// import { faStepBackward } from '@fortawesome/free-solid-svg-icons';
-// import { faStepForward } from '@fortawesome/free-solid-svg-icons';
-// import { faRandom } from '@fortawesome/free-solid-svg-icons';
-
-const Player = ({ audioRef, currentSong, isPlaying, setIsPlaying, setSongInfo, songInfo, songs, setCurrentSong }) => {
+const Player = ({ audioRef, currentSong, isPlaying, setIsPlaying, setSongInfo, songInfo, songs, setCurrentSong, setSongs }) => {
 
   //Event Handlers
+  //Use Effect
+  useEffect(() => {
+    const newSongs = songs.map((song) => {
+      if (song.id === currentSong.id) {
+        return {
+          ...song,
+          active: true,
+        }
+      } else {
+        return {
+          ...song,
+          active: false,
+        }
+      }
+    });
+    setSongs(newSongs);
+  }, [currentSong]);
+
+
   const playSongToggle = () => {
     if (isPlaying) {
       audioRef.current.pause();
