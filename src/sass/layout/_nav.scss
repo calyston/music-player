@@ -1,0 +1,16 @@
+//Navigation Bar
+
+nav {
+  min-height: 10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: $main-spacing;
+
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+}
