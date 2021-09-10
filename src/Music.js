@@ -23,16 +23,6 @@ function chillHop() {
       active: false,
     },
     {
-      name: "exits",
-      cover:
-        "https://chillhop.com/wp-content/uploads/2021/05/1245c0271290a3196328c0cf4aaa910cd873dfe7-1024x1024.jpg",
-      artist: " mommy, Sleepy Fish ",
-      audio: "https://mp3.chillhop.com/serve.php/?mp3=19066",
-      color: ["#5B8ECF", "#E9D7D0"],
-      id: uuidv4(),
-      active: false,
-    },
-    {
       name: "Daylight",
       cover:
         "https://chillhop.com/wp-content/uploads/2020/07/ef95e219a44869318b7806e9f0f794a1f9c451e4-1024x1024.jpg",

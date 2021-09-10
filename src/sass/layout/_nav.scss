@@ -2,11 +2,13 @@
 
 nav {
   min-height: 10vh;
+  width: 50vw;
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  padding: $main-spacing;
+  padding: $main-spacing 0;
 
   button {
     background-color: transparent;

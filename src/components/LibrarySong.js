@@ -1,6 +1,7 @@
 //Library Song Name Artist and Image
 
 import React from 'react';
+import { playAudio } from '../Util';
 
 const LibrarySong = ({ song, songs, setCurrentSong, id, audioRef, isPlaying, setSongs }) => {
   const selectSong = () => {
@@ -22,15 +23,7 @@ const LibrarySong = ({ song, songs, setCurrentSong, id, audioRef, isPlaying, set
       }
     });
     setSongs(newSongs);
-    //Check if the song is playing
-    if (isPlaying) {
-      const currentlyPlaying = audioRef.current.play();
-      if (currentlyPlaying !== undefined) {
-        currentlyPlaying.then((audio) => {
-          audioRef.current.play();
-        });
-      }
-    }
+    playAudio(isPlaying, audioRef);
   };
   return (
     <div onClick={selectSong} className={`library-song ${song.active ? 'selected' : ''}`}>

@@ -1,6 +1,7 @@
 //Music Player Controls
 
 import React, { useEffect } from 'react';
+import { playAudio } from '../Util';
 
 const Player = ({ audioRef, currentSong, isPlaying, setIsPlaying, setSongInfo, songInfo, songs, setCurrentSong, setSongs }) => {
 
@@ -57,22 +58,32 @@ const Player = ({ audioRef, currentSong, isPlaying, setIsPlaying, setSongInfo, s
     if (direction === 'skip-back') {
       if ((currentIndex - 1) % songs.length === -1) {
         setCurrentSong(songs[songs.length - 1]);
+        playAudio(isPlaying, audioRef);
         return;
       }
       setCurrentSong(songs[(currentIndex - 1) % songs.length])
     }
+    playAudio(isPlaying, audioRef);
   };
+
+  //Add Track Animation Style
+  const trackAnimation = {
+    transform: `translateX(${songInfo.animationPercent}%)`
+  }
 
   return (
     <div className="player-container">
       <div className="time-control">
         <p>{getTime(songInfo.currentTime)}</p>
-        <input min={0}
-          max={songInfo.duration || 0}
-          value={songInfo.currentTime}
-          onChange={dragTimeSlider}
-          type="range" />
-        <p>{getTime(songInfo.duration)}</p>
+        <div style={{ background: `linear-gradient(to right, ${currentSong.color[0]}, ${currentSong.color[1]})` }} className="track">
+          <input min={0}
+            max={songInfo.duration || 0}
+            value={songInfo.currentTime}
+            onChange={dragTimeSlider}
+            type="range" />
+          <div style={trackAnimation} className="animate-track"></div>
+        </div>
+        <p>{songInfo.duration ? getTime(songInfo.duration) : "0:00"}</p>
       </div>
       <div className="play-controls">
         <svg className="buttons shuffle" xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" viewBox="0 0 24 24"><path d="M2 7h-2v-2h2c3.49 0 5.48 1.221 6.822 2.854-.41.654-.754 1.312-1.055 1.939-1.087-1.643-2.633-2.793-5.767-2.793zm16 10c-3.084 0-4.604-1.147-5.679-2.786-.302.627-.647 1.284-1.06 1.937 1.327 1.629 3.291 2.849 6.739 2.849v3l6-4-6-4v3zm0-10v3l6-4-6-4v3c-5.834 0-7.436 3.482-8.85 6.556-1.343 2.921-2.504 5.444-7.15 5.444h-2v2h2c5.928 0 7.543-3.511 8.968-6.609 1.331-2.893 2.479-5.391 7.032-5.391z" /></svg>
