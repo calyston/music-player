@@ -9,7 +9,7 @@
 }
 
 .time-control {
-  width: 50vw;
+  width: 80vw;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -58,10 +58,20 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .play-controls {
-  width: 50vw;
+  width: 80vw;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: ($main-spacing * 2) 0;
+}
+
+@media screen and (min-width: 768px) {
+  .time-control {
+    width: 50vw;
+  }
+
+  .play-controls {
+    width: 50vw;
+  }
 }

@@ -1,11 +1,10 @@
 .library {
   background-color: $light-blue;
   box-shadow: 2px 0px 10px gainsboro;
-  // padding: 0 $main-spacing;
   position: fixed;
   top: 0;
   left: 0;
-  width: 30rem;
+  width: 100vw;
   height: 100%;
   overflow: scroll;
   transform: translateX(-100%);
@@ -51,4 +50,10 @@
 
 *{
   scrollbar-width: thin;
+}
+
+@media screen and (min-width: 600px) {
+  .library {
+    width: 30rem;
+  }
 }
