@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react';
 import './sass/main.scss';
 import music from './Music';
-
 //Adding Components
 import Song from './components/Song';
 import Player from './components/Player';
@@ -67,5 +66,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;

@@ -1,3 +1,26 @@
+# Music Player
+
+This music player is a music player app built with React and SASS. There is a library of songs included.
+
+### Live Preview: 
+
+
+
+## Technologies Used
+
+![React](https://img.shields.io/badge/-React-blue) ![SASS](https://img.shields.io/badge/-SASS-ff69b4)
+
+## Personal Learnings
+
+This was a project for learning React components.
+
+## Installation Instructions
+
+To run the music player, download this project and then run on a local server of your choice.
+
+#### Written by Christine Lyston
+#### Date: September 2021
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
